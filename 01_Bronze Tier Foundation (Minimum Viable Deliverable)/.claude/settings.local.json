@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(dir /B \"E:\\\\VS-CODES\\\\Prompt-MCP\\\\HackathonAI_Employee_Vault\")"
+    ]
+  }
+}
