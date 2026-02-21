@@ -1,0 +1,59 @@
+{
+  "_comment": "Silver Tier AI Employee — MCP Server Configuration",
+  "_docs": "https://docs.anthropic.com/en/docs/claude-code/mcp",
+
+  "mcpServers": {
+    "email-mcp": {
+      "command": "node",
+      "args": ["mcp_servers/email-mcp/index.js"],
+      "description": "Gmail draft and send via HITL-gated tool-use. Tools: draft_email, send_email, approve_draft, reject_draft, list_email_drafts.",
+
+      "_setup": [
+        "1. cd mcp_servers/email-mcp && npm install",
+        "2. Place credentials.json (Google OAuth2 Desktop) in project root",
+        "3. node mcp_servers/email-mcp/index.js --auth   (one-time OAuth login)",
+        "4. Restart Claude Code — the email tools appear automatically"
+      ],
+
+      "_tools": {
+        "draft_email": {
+          "description": "Compose email → save to /Plans + /Pending Approval",
+          "required_params": ["to", "subject", "body"],
+          "optional_params": ["cc", "bcc", "notes"]
+        },
+        "approve_draft": {
+          "description": "HITL: move draft from /Pending Approval → /Approved",
+          "required_params": ["filename"]
+        },
+        "reject_draft": {
+          "description": "HITL: move draft from /Pending Approval → /Rejected",
+          "required_params": ["filename"],
+          "optional_params": ["reason"]
+        },
+        "send_email": {
+          "description": "Send via Gmail API. HITL gate: draft must be in /Approved first.",
+          "required_params": ["filename"]
+        },
+        "list_email_drafts": {
+          "description": "List all email drafts with status across all folders",
+          "required_params": []
+        }
+      },
+
+      "_hitl_flow": {
+        "step_1": "draft_email(to, subject, body)  →  /Plans + /Pending Approval",
+        "step_2": "Human reviews /Pending Approval/email_draft_*.md",
+        "step_3": "approve_draft(filename)  →  /Approved",
+        "step_4": "send_email(filename)  →  Gmail sent + /Done"
+      },
+
+      "_test_commands": {
+        "draft":   "Ask Claude: \"Draft an email to test@example.com subject 'Hello' body 'Test'\"",
+        "list":    "Ask Claude: \"List all email drafts\"",
+        "approve": "Ask Claude: \"Approve draft email_draft_[date]_Hello.md\"",
+        "send":    "Ask Claude: \"Send email_draft_[date]_Hello.md\"",
+        "reject":  "Ask Claude: \"Reject draft email_draft_[date]_Hello.md reason 'wrong tone'\""
+      }
+    }
+  }
+}
