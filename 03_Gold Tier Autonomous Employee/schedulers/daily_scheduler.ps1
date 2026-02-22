@@ -141,3 +141,40 @@ catch {
     Write-Log "ERROR — $($_.Exception.Message)"
     exit 1
 }
+
+# ---------------------------------------------------------------------------
+# Weekly Audit Briefer — runs every Sunday
+# ---------------------------------------------------------------------------
+if ((Get-Date).DayOfWeek -eq 'Sunday') {
+    Write-Log "Sunday detected — running Weekly Audit Briefer (Skill 8)..."
+
+    $WeeklyScript = Join-Path $VaultRoot "Skills\weekly_audit_briefer.py"
+
+    $PythonCmd = (Get-Command python3 -ErrorAction SilentlyContinue)?.Source
+    if (-not $PythonCmd) {
+        $PythonCmd = (Get-Command python -ErrorAction SilentlyContinue)?.Source
+    }
+
+    if (-not $PythonCmd) {
+        Write-Log "ERROR: Python not found. Cannot run Weekly Audit Briefer."
+    }
+    elseif (-not (Test-Path $WeeklyScript)) {
+        Write-Log "ERROR: weekly_audit_briefer.py not found at: $WeeklyScript"
+    }
+    else {
+        try {
+            $WeeklyOutput = & $PythonCmd $WeeklyScript 2>&1 | Out-String
+            # Extract the briefing path from output
+            $BriefingLine = ($WeeklyOutput -split "`n") | Where-Object { $_ -match 'Briefing Path\s*:' } | Select-Object -Last 1
+            $BriefingPath = ($BriefingLine -replace '.*Briefing Path\s*:\s*', '').Trim()
+            Write-Log "Weekly audit complete — $($BriefingPath ? $BriefingPath : 'see output')"
+        }
+        catch {
+            Write-Log "ERROR — Weekly Audit Briefer: $($_.Exception.Message)"
+        }
+    }
+}
+else {
+    $DayName = (Get-Date).DayOfWeek
+    Write-Log "Not Sunday ($DayName) — skipping Weekly Audit Briefer."
+}

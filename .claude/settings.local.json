@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(git filter-repo:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)"
+    ]
+  }
+}

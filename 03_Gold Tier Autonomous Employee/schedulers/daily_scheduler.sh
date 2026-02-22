@@ -117,3 +117,36 @@ else
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR — Claude exited with code $EXIT_CODE. Check $OUTPUT_FILE for details." >&2
   exit $EXIT_CODE
 fi
+
+# ---------------------------------------------------------------------------
+# Weekly Audit Briefer — runs every Sunday (day-of-week == 7 in ISO format)
+# ---------------------------------------------------------------------------
+# date +%u returns: 1=Monday … 7=Sunday
+if [ "$(date +%u)" = "7" ]; then
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Sunday detected — running Weekly Audit Briefer (Skill 8)..." >&2
+
+  WEEKLY_SCRIPT="$VAULT_ROOT/Skills/weekly_audit_briefer.py"
+
+  if ! command -v python3 &>/dev/null && ! command -v python &>/dev/null; then
+    echo "[ERROR] Python not found. Cannot run Weekly Audit Briefer." >&2
+  elif [ ! -f "$WEEKLY_SCRIPT" ]; then
+    echo "[ERROR] weekly_audit_briefer.py not found at: $WEEKLY_SCRIPT" >&2
+  else
+    PYTHON_CMD="python3"
+    command -v python3 &>/dev/null || PYTHON_CMD="python"
+
+    WEEKLY_OUTPUT=$("$PYTHON_CMD" "$WEEKLY_SCRIPT" 2>&1)
+    WEEKLY_EXIT=$?
+
+    if [ $WEEKLY_EXIT -eq 0 ]; then
+      # Extract briefing path from output (last line matching "Briefing Path")
+      BRIEFING_PATH=$(echo "$WEEKLY_OUTPUT" | grep -oP '(?<=Briefing Path : ).*' | tail -1)
+      echo "[$(date '+%Y-%m-%d %H:%M:%S')] Weekly audit complete — ${BRIEFING_PATH:-see output}" >&2
+    else
+      echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR — Weekly Audit Briefer exited with code $WEEKLY_EXIT" >&2
+      echo "$WEEKLY_OUTPUT" >&2
+    fi
+  fi
+else
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] Not Sunday (day=$(date +%u)) — skipping Weekly Audit Briefer." >&2
+fi

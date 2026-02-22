@@ -1,12 +1,6 @@
-# Google OAuth credentials & tokens
+# Google OAuth credentials
 client_secret*.json
 *.credentials.json
-credentials.json
-token.json
-
-# Browser session data (Playwright / WhatsApp / LinkedIn)
-session/
-**/session/
 
 # Environment variables
 .env

@@ -59,8 +59,12 @@ import sys
 import re
 import shutil
 import argparse
+import traceback
 from datetime import datetime
 from pathlib import Path
+
+# --- Gold Tier Error Recovery ---
+from error_recovery import log_skill_error, write_manual_action_plan  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -346,6 +350,30 @@ def hitl_gate(lead: dict, post_text: str) -> bool:
 
 def run_skill(specific_file: Path | None = None) -> None:
     """Main skill execution: scan → draft → save → route to HITL."""
+    try:
+        _run_skill_inner(specific_file)
+    except Exception as exc:
+        tb = traceback.format_exc()
+        log(f"SKILL ERROR: {exc}")
+        err_path = log_skill_error(
+            "Skill3_AutoLinkedInPoster", exc,
+            context=f"specific_file={specific_file}", tb=tb,
+        )
+        log(f"  Error logged to: {err_path}")
+        plan_path = write_manual_action_plan(
+            skill_name="Skill3_AutoLinkedInPoster",
+            action_description=(
+                "Manually draft a LinkedIn post for leads in /Needs Action/ "
+                "and place the draft in /Plans/ then /Pending Approval/ for HITL review."
+            ),
+            context=f"Failed on file: {specific_file}. Error: {exc}",
+            error=str(exc),
+        )
+        log(f"  Manual action plan written to: {plan_path}")
+
+
+def _run_skill_inner(specific_file: Path | None = None) -> None:
+    """Inner implementation — wrapped by run_skill for error recovery."""
 
     print("=" * 60)
     print("Skill 3: Auto LinkedIn Poster")

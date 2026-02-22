@@ -20,8 +20,14 @@ import os
 import sys
 import time
 import shutil
+import traceback
 from datetime import datetime
 from pathlib import Path
+
+# --- Gold Tier Error Recovery ---
+_SKILLS_DIR = Path(__file__).resolve().parent.parent / "Skills"
+sys.path.insert(0, str(_SKILLS_DIR))
+from error_recovery import with_retry, log_watcher_error  # noqa: E402
 
 try:
     from watchdog.observers import Observer
@@ -112,8 +118,12 @@ def process_file(filepath: Path) -> bool:
         dest_filename = f"FILE_{original_name}"
         dest_path = NEEDS_ACTION_DIR / dest_filename
 
-        # Copy file to Needs Action
-        shutil.copy2(filepath, dest_path)
+        # Copy file to Needs Action (with retry for locked/in-use files)
+        with_retry(
+            shutil.copy2, filepath, dest_path,
+            label="fs_copy_to_needs_action",
+            max_retries=3, base_delay=1, max_delay=10,
+        )
         log(f"COPIED: {original_name} -> {dest_path}")
 
         # Create metadata file
@@ -124,14 +134,18 @@ def process_file(filepath: Path) -> bool:
         log(f"SUCCESS: File processed - {original_name} ({file_size} bytes)")
         return True
 
-    except PermissionError:
+    except PermissionError as e:
         log(f"ERROR: Permission denied - {filepath.name}")
+        log_watcher_error("filesystem", e, context=f"PermissionError copying {filepath.name}")
         return False
-    except FileNotFoundError:
+    except FileNotFoundError as e:
         log(f"ERROR: File not found - {filepath.name}")
+        log_watcher_error("filesystem", e, context=f"FileNotFoundError for {filepath.name}")
         return False
     except Exception as e:
+        tb = traceback.format_exc()
         log(f"ERROR: Failed to process {filepath.name} - {e}")
+        log_watcher_error("filesystem", e, context=f"process_file failed for {filepath.name}", tb=tb)
         return False
 
 
@@ -223,7 +237,9 @@ def main():
         log("Shutdown requested...")
         observer.stop()
     except Exception as e:
+        tb = traceback.format_exc()
         log(f"ERROR: Watcher crashed - {e}")
+        log_watcher_error("filesystem", e, context="observer crashed in main loop", tb=tb)
         observer.stop()
 
     observer.join()

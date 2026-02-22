@@ -52,8 +52,14 @@ import os
 import sys
 import time
 import re
+import traceback
 from datetime import datetime
 from pathlib import Path
+
+# --- Gold Tier Error Recovery ---
+_SKILLS_DIR = Path(__file__).resolve().parent.parent / "Skills"
+sys.path.insert(0, str(_SKILLS_DIR))
+from error_recovery import with_retry, log_watcher_error  # noqa: E402
 
 # --- Dependency Check ---
 try:
@@ -212,7 +218,10 @@ def scrape_messages(page) -> list[dict]:
     results = []
 
     try:
-        page.goto(LINKEDIN_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT)
+        with_retry(
+            lambda: page.goto(LINKEDIN_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            label="linkedin_goto_messages", max_retries=3, base_delay=2, max_delay=30,
+        )
         page.wait_for_load_state("domcontentloaded")
         time.sleep(2)
 
@@ -261,6 +270,7 @@ def scrape_messages(page) -> list[dict]:
 
     except Exception as e:
         log(f"WARN: Could not scrape messages - {e}")
+        log_watcher_error("linkedin", e, context="scrape_messages")
 
     return results
 
@@ -277,7 +287,10 @@ def scrape_notifications(page) -> list[dict]:
     results = []
 
     try:
-        page.goto(LINKEDIN_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT)
+        with_retry(
+            lambda: page.goto(LINKEDIN_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            label="linkedin_goto_notifications", max_retries=3, base_delay=2, max_delay=30,
+        )
         page.wait_for_load_state("domcontentloaded")
         time.sleep(2)
 
@@ -309,6 +322,7 @@ def scrape_notifications(page) -> list[dict]:
 
     except Exception as e:
         log(f"WARN: Could not scrape notifications - {e}")
+        log_watcher_error("linkedin", e, context="scrape_notifications")
 
     return results
 
@@ -430,22 +444,37 @@ def main():
             while True:
                 run += 1
                 log(f"--- Poll #{run} ---")
-                seen_keys = scan_for_leads(page, seen_keys)
+                try:
+                    seen_keys = scan_for_leads(page, seen_keys)
+                except Exception as poll_err:
+                    tb = traceback.format_exc()
+                    log(f"ERROR: Poll #{run} failed — {poll_err}. Logging and continuing...")
+                    err_path = log_watcher_error(
+                        "linkedin", poll_err,
+                        context=f"scan_for_leads poll #{run}", tb=tb,
+                    )
+                    log(f"  Error logged to: {err_path.name}")
                 log(f"Sleeping {CHECK_INTERVAL}s until next check...")
                 time.sleep(CHECK_INTERVAL)
 
                 # Reload home page periodically to keep session alive
                 if run % 30 == 0:
                     log("Refreshing session...")
-                    page.goto(LINKEDIN_HOME_URL, timeout=PAGE_LOAD_TIMEOUT)
-                    time.sleep(2)
+                    try:
+                        page.goto(LINKEDIN_HOME_URL, timeout=PAGE_LOAD_TIMEOUT)
+                        time.sleep(2)
+                    except Exception as refresh_err:
+                        log(f"WARN: Session refresh failed — {refresh_err}")
+                        log_watcher_error("linkedin", refresh_err, context="session refresh")
 
         except KeyboardInterrupt:
             print()
             log("Shutdown requested by user.")
 
         except Exception as e:
+            tb = traceback.format_exc()
             log(f"FATAL ERROR: {e}")
+            log_watcher_error("linkedin", e, context="fatal error in main loop", tb=tb)
             raise
 
         finally:

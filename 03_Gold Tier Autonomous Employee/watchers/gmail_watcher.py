@@ -47,8 +47,14 @@ import time
 import re
 import base64
 import json
+import traceback
 from datetime import datetime
 from pathlib import Path
+
+# --- Gold Tier Error Recovery ---
+_SKILLS_DIR = Path(__file__).resolve().parent.parent / "Skills"
+sys.path.insert(0, str(_SKILLS_DIR))
+from error_recovery import with_retry, log_watcher_error  # noqa: E402
 
 # --- Dependency Checks ---
 try:
@@ -221,16 +227,25 @@ def get_gmail_service():
 # Core Watcher Logic
 # ---------------------------------------------------------------------------
 
+def _do_list_messages(service):
+    return service.users().messages().list(
+        userId="me", q="is:unread is:important", maxResults=20
+    ).execute()
+
+
 def fetch_unread_important(service) -> list:
     """
     Return list of unread messages matching Gmail IMPORTANT label.
-    Falls back to all unread if IMPORTANT label returns nothing.
+    Uses exponential backoff retry on network/API failures.
     """
-    results = service.users().messages().list(
-        userId="me",
-        q="is:unread is:important",
-        maxResults=20
-    ).execute()
+    results = with_retry(
+        _do_list_messages,
+        service,
+        label="gmail_list_messages",
+        max_retries=3,
+        base_delay=1,
+        max_delay=60,
+    )
     return results.get("messages", [])
 
 
@@ -240,8 +255,9 @@ def process_messages(service, seen_ids: set) -> set:
 
     try:
         messages = fetch_unread_important(service)
-    except HttpError as e:
-        log(f"ERROR: Gmail API call failed - {e}")
+    except Exception as e:
+        log(f"ERROR: Gmail API call failed after retries - {e}")
+        log_watcher_error("gmail", e, context="fetch_unread_important failed")
         return seen_ids
 
     if not messages:
@@ -258,11 +274,18 @@ def process_messages(service, seen_ids: set) -> set:
             continue  # Already processed this session
 
         try:
-            msg = service.users().messages().get(
-                userId="me", id=msg_id, format="full"
-            ).execute()
-        except HttpError as e:
-            log(f"WARN: Could not fetch message {msg_id} - {e}")
+            msg = with_retry(
+                lambda: service.users().messages().get(
+                    userId="me", id=msg_id, format="full"
+                ).execute(),
+                label=f"gmail_get_message_{msg_id[:8]}",
+                max_retries=3,
+                base_delay=1,
+                max_delay=30,
+            )
+        except Exception as e:
+            log(f"WARN: Could not fetch message {msg_id} after retries - {e}")
+            log_watcher_error("gmail", e, context=f"get message id={msg_id}")
             continue
 
         headers = msg.get("payload", {}).get("headers", [])
@@ -312,7 +335,17 @@ def main():
         while True:
             run += 1
             log(f"--- Poll #{run} ---")
-            seen_ids = process_messages(service, seen_ids)
+            try:
+                seen_ids = process_messages(service, seen_ids)
+            except Exception as poll_err:
+                tb = traceback.format_exc()
+                log(f"ERROR: Poll #{run} failed — {poll_err}. Logging and continuing...")
+                err_path = log_watcher_error(
+                    "gmail", poll_err,
+                    context=f"poll cycle #{run}",
+                    tb=tb,
+                )
+                log(f"  Error logged to: {err_path.name}")
             log(f"Sleeping {CHECK_INTERVAL}s until next check...")
             time.sleep(CHECK_INTERVAL)
 
@@ -321,7 +354,9 @@ def main():
         log("Shutdown requested by user.")
 
     except Exception as e:
+        tb = traceback.format_exc()
         log(f"FATAL ERROR: {e}")
+        log_watcher_error("gmail", e, context="fatal error in main loop", tb=tb)
         raise
 
     finally:

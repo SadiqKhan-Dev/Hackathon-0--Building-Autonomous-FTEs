@@ -53,8 +53,14 @@ import os
 import sys
 import time
 import re
+import traceback
 from datetime import datetime
 from pathlib import Path
+
+# --- Gold Tier Error Recovery ---
+_SKILLS_DIR = Path(__file__).resolve().parent.parent / "Skills"
+sys.path.insert(0, str(_SKILLS_DIR))
+from error_recovery import with_retry, log_watcher_error  # noqa: E402
 
 # --- Dependency Check ---
 try:
@@ -249,6 +255,7 @@ def extract_unread_chats(page) -> list[dict]:
 
     except Exception as e:
         log(f"WARN: Error reading chat list - {e}")
+        log_watcher_error("whatsapp", e, context="extract_unread_chats")
 
     return unread_chats
 
@@ -285,6 +292,7 @@ def open_chat_and_get_messages(page, sender: str) -> str:
 
     except Exception as e:
         log(f"WARN: Could not open chat for {sender} - {e}")
+        log_watcher_error("whatsapp", e, context=f"open_chat_and_get_messages sender={sender}")
         return ""
 
 
@@ -389,22 +397,37 @@ def main():
             while True:
                 run += 1
                 log(f"--- Poll #{run} ---")
-                seen_senders = scan_for_keywords(page, seen_senders)
+                try:
+                    seen_senders = scan_for_keywords(page, seen_senders)
+                except Exception as poll_err:
+                    tb = traceback.format_exc()
+                    log(f"ERROR: Poll #{run} failed — {poll_err}. Logging and continuing...")
+                    err_path = log_watcher_error(
+                        "whatsapp", poll_err,
+                        context=f"scan_for_keywords poll #{run}", tb=tb,
+                    )
+                    log(f"  Error logged to: {err_path.name}")
                 log(f"Sleeping {CHECK_INTERVAL}s until next check...")
                 time.sleep(CHECK_INTERVAL)
 
                 # Reload the page periodically to keep the session fresh
                 if run % 60 == 0:
                     log("Refreshing page to keep session alive...")
-                    page.reload()
-                    wait_for_whatsapp_ready(page)
+                    try:
+                        page.reload()
+                        wait_for_whatsapp_ready(page)
+                    except Exception as refresh_err:
+                        log(f"WARN: Page refresh failed — {refresh_err}")
+                        log_watcher_error("whatsapp", refresh_err, context="page reload")
 
         except KeyboardInterrupt:
             print()
             log("Shutdown requested by user.")
 
         except Exception as e:
+            tb = traceback.format_exc()
             log(f"FATAL ERROR: {e}")
+            log_watcher_error("whatsapp", e, context="fatal error in main loop", tb=tb)
             raise
 
         finally:

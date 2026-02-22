@@ -67,8 +67,14 @@ import re
 import shutil
 import argparse
 import time
+import traceback
 from datetime import datetime
 from pathlib import Path
+
+# --- Gold Tier Error Recovery ---
+_SKILLS_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(_SKILLS_DIR))
+from error_recovery import log_skill_error, write_manual_action_plan  # noqa: E402
 
 # --- Gmail API (optional — only needed for email_draft execution) ---
 try:
@@ -420,7 +426,28 @@ def process_approved_file(approved_path: Path) -> None:
     try:
         result = executor(filename, fields, approved_path)
     except Exception as e:
+        tb = traceback.format_exc()
         result = {"success": False, "error": str(e)}
+        log_skill_error(
+            "Skill4_HITLApprovalHandler", e,
+            context=f"executor={action_type} file={filename}", tb=tb,
+        )
+        # MCP degradation: if email execution fails, write a manual action plan
+        if action_type == "email_draft":
+            to_addr   = fields.get("to", "unknown recipient")
+            subject   = fields.get("subject", "(no subject)")
+            plan_path = write_manual_action_plan(
+                skill_name="Skill4_HITLApprovalHandler",
+                action_description=(
+                    f"Send email manually:\n"
+                    f"  To      : {to_addr}\n"
+                    f"  Subject : {subject}\n"
+                    f"  Body    : See approved file: /Approved/{filename}"
+                ),
+                context=f"Gmail API execution failed for {filename}",
+                error=str(e),
+            )
+            console(f"  MCP fallback: manual action plan written to {plan_path.name}")
 
     if result["success"]:
         new_status = {
@@ -700,7 +727,15 @@ def monitor(interval: int = MONITOR_INTERVAL, max_cycles: int = 0) -> None:
                     continue
 
                 processed.add(f.name)
-                process_approved_file(f)
+                try:
+                    process_approved_file(f)
+                except Exception as cycle_err:
+                    tb = traceback.format_exc()
+                    console(f"ERROR processing {f.name}: {cycle_err}. Logging and continuing...")
+                    log_skill_error(
+                        "Skill4_HITLApprovalHandler", cycle_err,
+                        context=f"process_approved_file: {f.name}", tb=tb,
+                    )
                 any_work = True
 
             # ── Process newly rejected files ──
