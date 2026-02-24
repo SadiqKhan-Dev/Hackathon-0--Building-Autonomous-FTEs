@@ -65,6 +65,7 @@ from pathlib import Path
 
 # --- Gold Tier Error Recovery ---
 from error_recovery import log_skill_error, write_manual_action_plan  # noqa: E402
+from audit_logger import log_action  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -355,6 +356,10 @@ def run_skill(specific_file: Path | None = None) -> None:
     except Exception as exc:
         tb = traceback.format_exc()
         log(f"SKILL ERROR: {exc}")
+        log_action("skill_error", "Skill3_AutoLinkedInPoster",
+                   target=str(specific_file or ""),
+                   parameters={"exception": type(exc).__name__},
+                   result=f"failed: {exc}")
         err_path = log_skill_error(
             "Skill3_AutoLinkedInPoster", exc,
             context=f"specific_file={specific_file}", tb=tb,
@@ -374,6 +379,9 @@ def run_skill(specific_file: Path | None = None) -> None:
 
 def _run_skill_inner(specific_file: Path | None = None) -> None:
     """Inner implementation — wrapped by run_skill for error recovery."""
+    log_action("skill_start", "Skill3_AutoLinkedInPoster",
+               target=str(specific_file or ""),
+               parameters={"keywords": KEYWORDS})
 
     print("=" * 60)
     print("Skill 3: Auto LinkedIn Poster")
@@ -430,6 +438,13 @@ def _run_skill_inner(specific_file: Path | None = None) -> None:
         approval_path = copy_to_pending_approval(plan_path)
         log(f"  Pending: {approval_path}")
 
+        log_action("item_queued", "Skill3_AutoLinkedInPoster",
+                   target=approval_path.name,
+                   parameters={"lead": lead["filename"], "keyword": lead["keyword"],
+                                "contact": lead["from"]},
+                   approval_status="pending",
+                   result="queued for HITL review")
+
         results.append({
             "lead": lead["filename"],
             "draft": plan_path,
@@ -437,6 +452,10 @@ def _run_skill_inner(specific_file: Path | None = None) -> None:
         })
 
     # Step 6 — Output summary
+    log_action("skill_complete", "Skill3_AutoLinkedInPoster",
+               parameters={"leads_processed": len(results)},
+               result=f"success — {len(results)} draft(s) queued")
+
     print()
     print("=" * 60)
     for r in results:

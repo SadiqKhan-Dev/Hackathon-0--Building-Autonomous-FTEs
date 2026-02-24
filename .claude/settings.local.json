@@ -4,7 +4,8 @@
       "Bash(cd:*)",
       "Bash(git filter-repo:*)",
       "Bash(ls:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git:*)"
     ]
   }
 }

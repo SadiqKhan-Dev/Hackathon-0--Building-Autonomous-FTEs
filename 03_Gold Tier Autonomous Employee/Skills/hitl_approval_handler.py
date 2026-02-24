@@ -75,6 +75,7 @@ from pathlib import Path
 _SKILLS_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(_SKILLS_DIR))
 from error_recovery import log_skill_error, write_manual_action_plan  # noqa: E402
+from audit_logger import log_action  # noqa: E402
 
 # --- Gmail API (optional — only needed for email_draft execution) ---
 try:
@@ -473,6 +474,11 @@ def process_approved_file(approved_path: Path) -> None:
         if plans_copy.exists():
             update_file_status(plans_copy, new_status)
 
+        log_action("hitl_executed", "Skill4_HITLApprovalHandler",
+                   target=filename,
+                   parameters={"action_type": action_type, "priority": priority},
+                   approval_status="approved",
+                   result=new_status)
         console(f"SUCCESS: {filename} → /Done | Status: {new_status}")
         console(f"  {result['message']}")
         log_event("EXECUTED", filename, action, new_status, result.get("message", "")[:60])
@@ -480,6 +486,11 @@ def process_approved_file(approved_path: Path) -> None:
     else:
         error = result.get("error", "unknown error")
         update_file_status(approved_path, "error")
+        log_action("hitl_executed", "Skill4_HITLApprovalHandler",
+                   target=filename,
+                   parameters={"action_type": action_type},
+                   approval_status="approved",
+                   result=f"failed: {error}")
         console(f"ERROR: {filename} failed — {error}")
         log_event("ERROR", filename, action, "error", error[:60])
 
@@ -504,6 +515,12 @@ def process_rejected_file(rejected_path: Path) -> None:
         update_file_status(plans_copy, "rejected")
 
     reason = fields.get("rejection_reason", "moved to /Rejected by reviewer")
+    log_action("hitl_rejected", "Skill4_HITLApprovalHandler",
+               target=filename,
+               parameters={"action_type": fields.get("type", "generic"),
+                            "reason": reason[:80]},
+               approval_status="rejected",
+               result="rejected")
     console(f"REJECTED: {filename} — {reason}")
     log_event("REJECTED", filename, fields.get("action", "review"), "rejected", reason[:60])
 
@@ -583,6 +600,11 @@ draft_file: "{draft_file}"
 
     filepath.write_text(content, encoding="utf-8")
 
+    log_action("hitl_queued", "Skill4_HITLApprovalHandler",
+               target=filename,
+               parameters={"type": action_type, "priority": priority, "target": target},
+               approval_status="pending",
+               result="queued for human review")
     console(f"QUEUED: {filename}")
     log_event("QUEUED", filename, action, "pending_approval", details[:60])
 

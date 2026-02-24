@@ -42,6 +42,7 @@ from pathlib import Path
 
 # --- Gold Tier Error Recovery ---
 from error_recovery import log_skill_error, write_manual_action_plan  # noqa: E402
+from audit_logger import log_action  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -521,6 +522,10 @@ def run_skill(specific_file: Path | None = None, dry_run: bool = False) -> None:
     except Exception as exc:
         tb = traceback.format_exc()
         print(f"[ERROR] Skill 6 failed: {exc}", flush=True)
+        log_action("skill_error", "Skill6_SocialSummaryGenerator",
+                   target=str(specific_file or ""),
+                   parameters={"exception": type(exc).__name__, "dry_run": dry_run},
+                   result=f"failed: {exc}")
         err_path = log_skill_error(
             "Skill6_SocialSummaryGenerator", exc,
             context=f"specific_file={specific_file}, dry_run={dry_run}", tb=tb,
@@ -541,6 +546,9 @@ def run_skill(specific_file: Path | None = None, dry_run: bool = False) -> None:
 
 def _run_skill_inner(specific_file: Path | None = None, dry_run: bool = False) -> None:
     """Inner implementation of Social Summary Generator."""
+    log_action("skill_start", "Skill6_SocialSummaryGenerator",
+               target=str(specific_file or ""),
+               parameters={"dry_run": dry_run})
 
     print("=" * 60)
     print("  Skill 6: Social Summary Generator")
@@ -586,10 +594,22 @@ def _run_skill_inner(specific_file: Path | None = None, dry_run: bool = False) -
             result = process_item(item, dry_run=dry_run)
             if result:
                 results.append(result)
+                log_action("item_drafted", "Skill6_SocialSummaryGenerator",
+                           target=item["filename"],
+                           parameters={"platform": item["platform"],
+                                        "lead_score": result["lead_score"],
+                                        "has_response": result["has_response"],
+                                        "dry_run": dry_run},
+                           approval_status="pending",
+                           result=f"lead_score={result['lead_score']}")
         except Exception as exc:
             log(f"  ERROR processing {item['filename']}: {exc}")
 
     # Step 7: Summary output
+    log_action("skill_complete", "Skill6_SocialSummaryGenerator",
+               parameters={"items_processed": len(results), "dry_run": dry_run},
+               result=f"success — {len(results)} item(s) drafted")
+
     print()
     print("=" * 60)
     print("  SOCIAL SUMMARY GENERATOR COMPLETE")

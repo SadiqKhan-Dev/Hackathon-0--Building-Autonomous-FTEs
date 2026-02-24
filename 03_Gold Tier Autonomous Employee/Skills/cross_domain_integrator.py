@@ -43,6 +43,7 @@ from pathlib import Path
 
 # --- Gold Tier Error Recovery ---
 from error_recovery import log_skill_error, write_manual_action_plan  # noqa: E402
+from audit_logger import log_action  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -626,6 +627,10 @@ def run_skill(specific_file: Path | None = None, dry_run: bool = False) -> None:
     except Exception as exc:
         tb = traceback.format_exc()
         log(f"SKILL ERROR: {exc}")
+        log_action("skill_error", "Skill5_CrossDomainIntegrator",
+                   target=str(specific_file or ""),
+                   parameters={"exception": type(exc).__name__, "dry_run": dry_run},
+                   result=f"failed: {exc}")
         err_path = log_skill_error(
             "Skill5_CrossDomainIntegrator", exc,
             context=f"specific_file={specific_file}, dry_run={dry_run}", tb=tb,
@@ -646,6 +651,9 @@ def run_skill(specific_file: Path | None = None, dry_run: bool = False) -> None:
 
 def _run_skill_inner(specific_file: Path | None = None, dry_run: bool = False) -> None:
     """Inner implementation of Cross Domain Integrator — wrapped by run_skill."""
+    log_action("skill_start", "Skill5_CrossDomainIntegrator",
+               target=str(specific_file or ""),
+               parameters={"dry_run": dry_run})
 
     print("=" * 60)
     print("  Skill 5: Cross Domain Integrator")
@@ -696,6 +704,13 @@ def _run_skill_inner(specific_file: Path | None = None, dry_run: bool = False) -
         if item["domain"] == "personal":
             result = route_personal_to_hitl(item, dry_run=dry_run)
             personal_results.append(result)
+            log_action("item_routed", "Skill5_CrossDomainIntegrator",
+                       target=item["filename"],
+                       parameters={"domain": "personal", "channel": result.get("channel", ""),
+                                    "priority": result.get("priority", "medium"),
+                                    "dry_run": dry_run},
+                       approval_status="pending",
+                       result="routed to HITL")
 
             # Track items that had no strong signal (defaulted)
             if "defaulted" in item["reason"]:
@@ -704,6 +719,12 @@ def _run_skill_inner(specific_file: Path | None = None, dry_run: bool = False) -
         else:  # business
             result = route_business_to_linkedin(item, dry_run=dry_run)
             business_results.append(result)
+            log_action("item_routed", "Skill5_CrossDomainIntegrator",
+                       target=item["filename"],
+                       parameters={"domain": "business", "channel": result.get("channel", ""),
+                                    "keyword": result.get("keyword", ""), "dry_run": dry_run},
+                       approval_status="pending",
+                       result="routed to LinkedIn poster")
 
     print()
 
@@ -717,6 +738,11 @@ def _run_skill_inner(specific_file: Path | None = None, dry_run: bool = False) -
     p_count = len(personal_results)
     b_count = len(business_results)
     total   = p_count + b_count
+
+    log_action("skill_complete", "Skill5_CrossDomainIntegrator",
+               parameters={"personal": p_count, "business": b_count,
+                            "total": total, "dry_run": dry_run},
+               result=f"success — {total} items routed")
 
     print()
     print("=" * 60)

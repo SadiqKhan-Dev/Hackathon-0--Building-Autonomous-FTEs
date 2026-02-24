@@ -341,7 +341,10 @@ def scrape_fb_messages(page) -> list[dict]:
     results = []
 
     try:
-        page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT)
+        with_retry(
+            lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            label="fb_goto_messages", max_retries=3, base_delay=2, max_delay=30,
+        )
         page.wait_for_load_state("domcontentloaded")
         time.sleep(3)  # Messenger can be slow
 
@@ -404,7 +407,10 @@ def scrape_fb_notifications(page) -> list[dict]:
     results = []
 
     try:
-        page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT)
+        with_retry(
+            lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            label="fb_goto_notifications", max_retries=3, base_delay=2, max_delay=30,
+        )
         page.wait_for_load_state("domcontentloaded")
         time.sleep(2)
 
@@ -488,7 +494,10 @@ def scrape_ig_dms(page) -> list[dict]:
     results = []
 
     try:
-        page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT)
+        with_retry(
+            lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            label="ig_goto_dms", max_retries=3, base_delay=2, max_delay=30,
+        )
         page.wait_for_load_state("domcontentloaded")
         time.sleep(3)
 
@@ -547,7 +556,10 @@ def scrape_ig_activity(page) -> list[dict]:
     results = []
 
     try:
-        page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT)
+        with_retry(
+            lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            label="ig_goto_activity", max_retries=3, base_delay=2, max_delay=30,
+        )
         page.wait_for_load_state("domcontentloaded")
         time.sleep(2)
 
