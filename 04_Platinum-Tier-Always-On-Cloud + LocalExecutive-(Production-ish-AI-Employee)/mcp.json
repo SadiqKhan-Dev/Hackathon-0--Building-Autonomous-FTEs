@@ -1,0 +1,191 @@
+{
+  "_comment": "Gold Tier AI Employee — MCP Server Configuration",
+  "_docs": "https://docs.anthropic.com/en/docs/claude-code/mcp",
+
+  "mcpServers": {
+    "email-mcp": {
+      "command": "node",
+      "args": ["mcp_servers/email-mcp/index.js"],
+      "description": "Gmail draft and send via HITL-gated tool-use. Tools: draft_email, send_email, approve_draft, reject_draft, list_email_drafts.",
+
+      "_setup": [
+        "1. cd mcp_servers/email-mcp && npm install",
+        "2. Place credentials.json (Google OAuth2 Desktop) in project root",
+        "3. node mcp_servers/email-mcp/index.js --auth   (one-time OAuth login)",
+        "4. Restart Claude Code -- the email tools appear automatically"
+      ],
+
+      "_tools": {
+        "draft_email": {
+          "description": "Compose email -> save to /Plans + /Pending Approval",
+          "required_params": ["to", "subject", "body"],
+          "optional_params": ["cc", "bcc", "notes"]
+        },
+        "approve_draft": {
+          "description": "HITL: move draft from /Pending Approval -> /Approved",
+          "required_params": ["filename"]
+        },
+        "reject_draft": {
+          "description": "HITL: move draft from /Pending Approval -> /Rejected",
+          "required_params": ["filename"],
+          "optional_params": ["reason"]
+        },
+        "send_email": {
+          "description": "Send via Gmail API. HITL gate: draft must be in /Approved first.",
+          "required_params": ["filename"]
+        },
+        "list_email_drafts": {
+          "description": "List all email drafts with status across all folders",
+          "required_params": []
+        }
+      },
+
+      "_hitl_flow": {
+        "step_1": "draft_email(to, subject, body)  ->  /Plans + /Pending Approval",
+        "step_2": "Human reviews /Pending Approval/email_draft_*.md",
+        "step_3": "approve_draft(filename)  ->  /Approved",
+        "step_4": "send_email(filename)  ->  Gmail sent + /Done"
+      },
+
+      "_test_commands": {
+        "draft":   "Ask Claude: \"Draft an email to test@example.com subject 'Hello' body 'Test'\"",
+        "list":    "Ask Claude: \"List all email drafts\"",
+        "approve": "Ask Claude: \"Approve draft email_draft_[date]_Hello.md\"",
+        "send":    "Ask Claude: \"Send email_draft_[date]_Hello.md\"",
+        "reject":  "Ask Claude: \"Reject draft email_draft_[date]_Hello.md reason 'wrong tone'\""
+      }
+    },
+
+    "calendar-mcp": {
+      "command": "node",
+      "args": ["mcp_servers/calendar-mcp/index.js"],
+      "description": "Google Calendar event draft and create via HITL-gated tool-use. Tools: draft_calendar_event, create_calendar_event, update_calendar_event, approve_calendar_draft, reject_calendar_draft, list_calendar_drafts.",
+
+      "_setup": [
+        "1. cd mcp_servers/calendar-mcp && npm install",
+        "2. Go to console.cloud.google.com -> APIs & Services -> Library",
+        "3. Enable 'Google Calendar API'",
+        "4. Place credentials.json (same Google OAuth2 Desktop file as email-mcp) in project root",
+        "5. node mcp_servers/calendar-mcp/index.js --auth   (one-time OAuth login, saves calendar_token.json)",
+        "6. Restart Claude Code -- the calendar tools appear automatically"
+      ],
+
+      "_tools": {
+        "draft_calendar_event": {
+          "description": "Draft a Google Calendar event -> save to /Plans + /Pending Approval",
+          "required_params": ["title", "start_datetime", "end_datetime"],
+          "optional_params": ["description", "attendees", "location", "timezone", "notes"]
+        },
+        "approve_calendar_draft": {
+          "description": "HITL: move draft from /Pending Approval -> /Approved",
+          "required_params": ["filename"]
+        },
+        "reject_calendar_draft": {
+          "description": "HITL: move draft from /Pending Approval -> /Rejected",
+          "required_params": ["filename"],
+          "optional_params": ["reason"]
+        },
+        "create_calendar_event": {
+          "description": "Create in Google Calendar. HITL gate: draft must be in /Approved first. Notifies attendees.",
+          "required_params": ["filename"]
+        },
+        "update_calendar_event": {
+          "description": "Update an existing Google Calendar event. HITL gate: draft must be in /Approved first.",
+          "required_params": ["filename"],
+          "optional_params": ["event_id"]
+        },
+        "list_calendar_drafts": {
+          "description": "List all calendar drafts with status across all folders",
+          "required_params": []
+        }
+      },
+
+      "_hitl_flow": {
+        "step_1": "draft_calendar_event(title, start_datetime, end_datetime)  ->  /Plans + /Pending Approval",
+        "step_2": "Human reviews /Pending Approval/calendar_draft_*.md",
+        "step_3": "approve_calendar_draft(filename)  ->  /Approved",
+        "step_4": "create_calendar_event(filename)  ->  Google Calendar event created + /Done"
+      },
+
+      "_test_commands": {
+        "draft":   "Ask Claude: \"Draft a calendar event: Team standup tomorrow 10am-10:30am\"",
+        "list":    "Ask Claude: \"List all calendar drafts\"",
+        "approve": "Ask Claude: \"Approve calendar_draft_[date]_Team_standup.md\"",
+        "create":  "Ask Claude: \"Create the approved calendar event calendar_draft_[date]_Team_standup.md\"",
+        "reject":  "Ask Claude: \"Reject calendar_draft_[date]_Team_standup.md reason 'wrong time'\""
+      }
+    },
+
+    "slack-mcp": {
+      "command": "node",
+      "args": ["mcp_servers/slack-mcp/index.js"],
+      "description": "Slack message draft and send via HITL-gated tool-use. Tools: draft_slack_message, send_slack_message, read_slack_channel, approve_slack_draft, reject_slack_draft, list_slack_drafts.",
+
+      "_setup": [
+        "1. cd mcp_servers/slack-mcp && npm install",
+        "2. Go to https://api.slack.com/apps -> Create New App -> From Scratch",
+        "3. Name the app (e.g. 'AI Employee') and select your Slack workspace",
+        "4. Go to 'OAuth & Permissions' -> 'Bot Token Scopes' and add:",
+        "     chat:write        (send messages)",
+        "     channels:read     (list public channels)",
+        "     channels:history  (read public channel messages)",
+        "     groups:read       (list private channels)",
+        "     groups:history    (read private channel messages)",
+        "     im:read           (read DMs)",
+        "     im:history        (read DM messages)",
+        "     users:read        (resolve user display names)",
+        "5. Go to 'Install App' -> 'Install to Workspace' -> Authorize",
+        "6. Copy the 'Bot User OAuth Token' (starts with xoxb-)",
+        "7. Create .env in the project root: SLACK_TOKEN=xoxb-your-token-here",
+        "8. Invite the bot to any channel: /invite @YourAppName",
+        "9. Restart Claude Code -- the Slack tools appear automatically"
+      ],
+
+      "_tools": {
+        "draft_slack_message": {
+          "description": "Compose a Slack message -> save to /Plans + /Pending Approval",
+          "required_params": ["channel", "message"],
+          "optional_params": ["thread_ts", "notes"]
+        },
+        "approve_slack_draft": {
+          "description": "HITL: move draft from /Pending Approval -> /Approved",
+          "required_params": ["filename"]
+        },
+        "reject_slack_draft": {
+          "description": "HITL: move draft from /Pending Approval -> /Rejected",
+          "required_params": ["filename"],
+          "optional_params": ["reason"]
+        },
+        "send_slack_message": {
+          "description": "Send via Slack API. HITL gate: draft must be in /Approved first.",
+          "required_params": ["filename"]
+        },
+        "read_slack_channel": {
+          "description": "Read recent messages from a Slack channel (up to 100)",
+          "required_params": ["channel"],
+          "optional_params": ["limit", "oldest"]
+        },
+        "list_slack_drafts": {
+          "description": "List all Slack message drafts with status across all folders",
+          "required_params": []
+        }
+      },
+
+      "_hitl_flow": {
+        "step_1": "draft_slack_message(channel, message)  ->  /Plans + /Pending Approval",
+        "step_2": "Human reviews /Pending Approval/slack_draft_*.md",
+        "step_3": "approve_slack_draft(filename)  ->  /Approved",
+        "step_4": "send_slack_message(filename)  ->  Slack posted + /Done"
+      },
+
+      "_test_commands": {
+        "read":    "Ask Claude: \"Read the last 10 messages from #general\"",
+        "draft":   "Ask Claude: \"Draft a Slack message to #general: 'Team standup in 5 minutes'\"",
+        "list":    "Ask Claude: \"List all Slack drafts\"",
+        "approve": "Ask Claude: \"Approve slack_draft_[date]_general.md\"",
+        "send":    "Ask Claude: \"Send the approved Slack message slack_draft_[date]_general.md\"",
+        "reject":  "Ask Claude: \"Reject slack_draft_[date]_general.md reason 'wrong channel'\""
+      }
+    }
+  }
+}
