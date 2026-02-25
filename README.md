@@ -2,14 +2,14 @@
 
 > **Build your own AI Employee** — from a local file-watching MVP to a fully autonomous, multi-channel agent with human-in-the-loop safety gates.
 
-A progressive **4-tier system** where each tier is a standalone, self-contained project that builds on the concepts of the previous one. Start simple, go autonomous.
+A progressive **5-tier system** where each tier is a standalone, self-contained project that builds on the concepts of the previous one. Start simple, go autonomous, ship to production.
 
 ---
 
 ## Table of Contents
 
 - [What is this?](#what-is-this)
-- [The 4-Tier Model](#the-4-tier-model)
+- [The 5-Tier Model](#the-5-tier-model)
 - [Core Architecture](#core-architecture)
   - [File-Based State Machine](#file-based-state-machine)
   - [HITL (Human-in-the-Loop) Pattern](#hitl-human-in-the-loop-pattern)
@@ -17,16 +17,17 @@ A progressive **4-tier system** where each tier is a standalone, self-contained 
 - [Tier 1: Bronze — Minimum Viable MVP](#tier-1-bronze--minimum-viable-mvp)
 - [Tier 2: Silver — Multi-Channel Assistant](#tier-2-silver--multi-channel-assistant)
 - [Tier 3: Gold — Autonomous Employee](#tier-3-gold--autonomous-employee)
-- [Tier 4: Platinum — Always-On Cloud Executive](#tier-4-platinum--always-on-cloud-executive)
+- [Tier 4: Auto-Post-AI — Personal AI Employee](#tier-4-auto-post-ai--personal-ai-employee)
+- [Tier 5: Platinum — Always-On Cloud Executive](#tier-5-platinum--always-on-cloud-executive)
 - [Quick Start](#quick-start)
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
 - [Configuration & Credentials](#configuration--credentials)
 - [How the HITL Gate Works](#how-the-hitl-gate-works)
-- [Ralph Loop Runner (Gold)](#ralph-loop-runner-gold)
+- [Ralph Loop Runner (Gold+)](#ralph-loop-runner-gold)
 - [MCP Servers](#mcp-servers)
-- [Error Recovery (Gold)](#error-recovery-gold)
-- [Audit Trail (Gold)](#audit-trail-gold)
+- [Error Recovery (Gold+)](#error-recovery-gold)
+- [Audit Trail (Gold+)](#audit-trail-gold)
 - [Company Handbook Pattern](#company-handbook-pattern)
 - [Contributing](#contributing)
 
@@ -40,13 +41,14 @@ The system is intentionally **file-based and transparent** — every action is a
 
 ---
 
-## The 4-Tier Model
+## The 5-Tier Model
 
 | Tier | Name | Purpose | Key Tech |
 |------|------|---------|----------|
 | **Bronze** | Minimum Viable Deliverable | Local file-watching + task organization | `watchdog`, Markdown |
 | **Silver** | Functional Assistant | Multi-channel monitoring with HITL approval gates | MCP, Gmail API, Playwright |
 | **Gold** | Autonomous Employee | Acts without constant human oversight | All Silver + autonomous loop, 6 channels |
+| **Auto-Post-AI** | Personal AI Employee | Scheduled multi-platform social posting with orchestrated execution | All Gold + master orchestrator, post executor |
 | **Platinum** | Always-On Cloud Executive | Production deployment, continuous operation | All Gold + cloud infrastructure |
 
 Each tier is in its own folder and is **fully self-contained**. You can run Bronze without Silver, or jump straight to Gold.
@@ -66,16 +68,16 @@ Inbox/
                   └─▶  Pending Approval/  ─▶  Approved/  ─▶  Done/
                                           ↘  Rejected/
 
-Logs/     (append-only event log)
-Errors/   (skill error reports)        [Gold+]
-Briefings/ (CEO weekly reports)        [Gold+]
+Logs/      (append-only event log)
+Errors/    (skill error reports)        [Gold+]
+Briefings/ (CEO weekly reports)         [Gold+]
 ```
 
 Every document uses **YAML frontmatter** for metadata:
 
 ```yaml
 ---
-type: email_draft | linkedin_post_draft | payment | sales_lead | file_drop | generic
+type: email_draft | linkedin_post_draft | payment | sales_lead | social_post_draft | file_drop | generic
 status: pending_approval | approved | rejected | sent | executed | pending
 priority: high | medium | low
 created: "YYYY-MM-DD HH:MM:SS"
@@ -90,7 +92,7 @@ Body content...
 
 ### HITL (Human-in-the-Loop) Pattern
 
-The core safety mechanism across Silver, Gold, and Platinum:
+The core safety mechanism across Silver, Gold, Auto-Post-AI, and Platinum:
 
 ```
 1. Agent drafts an action
@@ -135,7 +137,7 @@ External source  (Gmail, LinkedIn, WhatsApp, Twitter, Facebook/Instagram)
 **Goal:** Get something working. Local file-watching, zero external APIs.
 
 ```
-01_Bronze-Tier-Foundation-(.../
+01_Bronze-Tier-Foundation-(Minimum-Viable-Deliverable)/
 ├── Company Handbook.md          # Business rules reference
 ├── watchers/
 │   └── filesystem_watcher.py   # Core: monitors Inbox/
@@ -177,12 +179,18 @@ python watchers/filesystem_watcher.py
 │   └── email-mcp/
 │       └── index.js                     # Gmail draft/send via MCP
 ├── watchers/
+│   ├── filesystem_watcher.py
 │   ├── gmail_watcher.py
 │   ├── linkedin_watcher.py
 │   └── whatsapp_watcher.py
-└── Skills/
-    ├── auto_linkedin_poster.py
-    └── hitl_approval_handler.py
+├── Skills/
+│   ├── auto_linkedin_poster.py
+│   └── hitl_approval_handler.py
+├── tools/
+│   └── ralph_loop_runner.py
+└── schedulers/
+    ├── daily_scheduler.sh
+    └── daily_scheduler.ps1
 ```
 
 ### Watchers
@@ -256,10 +264,10 @@ python Skills/hitl_approval_handler.py --reject filename
 │   ├── calendar-mcp/                           # Google Calendar
 │   └── slack-mcp/                              # Slack messaging
 ├── watchers/
+│   ├── filesystem_watcher.py
 │   ├── gmail_watcher.py
 │   ├── linkedin_watcher.py
 │   ├── whatsapp_watcher.py
-│   ├── filesystem_watcher.py
 │   ├── twitter_watcher.py                      # NEW
 │   └── facebook_instagram_watcher.py           # NEW (shared FB + IG session)
 ├── Skills/
@@ -271,8 +279,11 @@ python Skills/hitl_approval_handler.py --reject filename
 │   ├── social_summary_generator.py             # NEW: Skill 6
 │   ├── twitter_post_generator.py               # NEW: Skill 7
 │   └── weekly_audit_briefer.py                 # NEW: Skill 8
-└── tools/
-    └── ralph_loop_runner.py                    # NEW: autonomous task loop
+├── tools/
+│   └── ralph_loop_runner.py                    # Autonomous task loop
+└── schedulers/
+    ├── daily_scheduler.sh
+    └── daily_scheduler.ps1
 ```
 
 ### New Watchers
@@ -330,7 +341,154 @@ python Skills/weekly_audit_briefer.py
 
 ---
 
-## Tier 4: Platinum — Always-On Cloud Executive
+## Tier 4: Auto-Post-AI — Personal AI Employee
+
+**Goal:** Fully automated social media posting pipeline. Draft → approve → execute. Supports LinkedIn and Facebook with a watchdog-powered orchestrator that dispatches approved posts without manual intervention.
+
+```
+04_Auto-Post-AI-(Personal-AI-Employee)/
+├── mcp.json                                    # 3 MCP servers
+├── docs/
+│   ├── architecture.md
+│   ├── lessons_learned.md
+│   └── social_automation_test.md
+├── scripts/                                    # NEW: orchestrator layer
+│   ├── master_orchestrator.py                  # watches Approved/, dispatches posts
+│   ├── social_media_executor_v2.py             # Playwright poster (no API keys)
+│   └── trigger_posts.py                        # creates post drafts for review
+├── mcp_servers/
+│   ├── email-mcp/
+│   ├── calendar-mcp/
+│   └── slack-mcp/
+├── watchers/
+│   ├── filesystem_watcher.py
+│   ├── gmail_watcher.py
+│   ├── linkedin_watcher.py
+│   ├── whatsapp_watcher.py
+│   ├── twitter_watcher.py
+│   └── facebook_instagram_watcher.py
+├── Skills/
+│   ├── error_recovery.py
+│   ├── audit_logger.py
+│   ├── auto_linkedin_poster.py
+│   ├── hitl_approval_handler.py
+│   ├── cross_domain_integrator.py
+│   ├── social_summary_generator.py
+│   ├── twitter_post_generator.py
+│   └── weekly_audit_briefer.py
+├── tools/
+│   └── ralph_loop_runner.py
+├── ralph-loop.sh                               # Quick-start script (Unix)
+├── ralph-loop.bat                              # Quick-start script (Windows)
+└── schedulers/
+    ├── daily_scheduler.sh
+    └── daily_scheduler.ps1
+```
+
+### New Scripts (unique to this tier)
+
+#### `master_orchestrator.py`
+
+A `watchdog`-based daemon that monitors the `Approved/` folder for `POST_*.md` files and automatically dispatches them to `social_media_executor_v2.py` as subprocesses.
+
+**State machine per post:**
+```
+DETECTED → RUNNING → DONE    (moved to Done/ by executor)
+                   ↘ RETRY   (up to 3×, exponential backoff)
+                           ↘ COOLDOWN (5 min) → RETRY again
+```
+
+- Scan interval: **5 seconds**
+- Max retries: **3**
+- Cooldown on failure: **5 minutes**
+- Logs: `Logs/orchestrator_YYYY-MM-DD.log`
+
+```bash
+python scripts/master_orchestrator.py
+```
+
+#### `social_media_executor_v2.py`
+
+Posts approved `POST_*.md` files to LinkedIn and/or Facebook using Playwright. **No API keys required** — uses persistent browser sessions.
+
+Input file format:
+```yaml
+---
+id: POST_001
+platform: linkedin          # linkedin | facebook | both
+status: approved
+created: "2026-02-25 10:00:00"
+---
+Your post content goes here.
+```
+
+```bash
+python scripts/social_media_executor_v2.py Approved/POST_001.md
+```
+
+#### `trigger_posts.py`
+
+Creates a post draft in `Pending_Approval/` for human review before scheduling.
+
+```bash
+python scripts/trigger_posts.py --platform linkedin --content "Excited to share!"
+python scripts/trigger_posts.py --platform facebook
+python scripts/trigger_posts.py --platform both
+# Output: Pending_Approval/POST_YYYY-MM-DD_HHMMSS.md
+```
+
+Supported platforms: `linkedin`, `facebook`, `twitter`, `instagram`
+
+### Auto-Post Workflow
+
+```
+trigger_posts.py
+      │  creates POST_*.md in Pending_Approval/
+      ▼
+Human reviews → moves to Approved/
+      │
+      ▼
+master_orchestrator.py detects file in Approved/
+      │  dispatches subprocess
+      ▼
+social_media_executor_v2.py posts via Playwright
+      │  on success: moves to Done/
+      ▼
+Done/POST_*.md  ✓
+```
+
+### Run it
+
+```bash
+cd "04_Auto-Post-AI-(Personal-AI-Employee)"
+
+# Option A: Quick-start with provided scripts
+./ralph-loop.sh        # Unix
+ralph-loop.bat         # Windows
+
+# Option B: Step by step
+
+# 1. Create a draft post for review
+python scripts/trigger_posts.py --platform linkedin --content "Your post content"
+
+# 2. Review Pending_Approval/POST_*.md, then move to Approved/
+
+# 3. Start the orchestrator (watches Approved/, auto-posts)
+python scripts/master_orchestrator.py
+
+# 4. (Optional) Run the Ralph autonomous loop
+python tools/ralph_loop_runner.py --max-iterations 20
+
+# 5. Start all watchers via PM2
+pm2 start watchers/gmail_watcher.py              --interpreter python --name gmail
+pm2 start watchers/linkedin_watcher.py           --interpreter python --name linkedin
+pm2 start watchers/facebook_instagram_watcher.py --interpreter python --name fb-ig
+pm2 start watchers/twitter_watcher.py            --interpreter python --name twitter
+```
+
+---
+
+## Tier 5: Platinum — Always-On Cloud Executive
 
 **Goal:** Production deployment. The AI Employee never sleeps.
 
@@ -391,6 +549,17 @@ python tools/ralph_loop_runner.py --max-iterations 20 --dry-run   # preview
 python tools/ralph_loop_runner.py --max-iterations 20             # live
 ```
 
+### Social Posting (Auto-Post-AI)
+
+```bash
+cd "04_Auto-Post-AI-(Personal-AI-Employee)"
+
+# Draft → approve → auto-post
+python scripts/trigger_posts.py --platform linkedin
+# Review Pending_Approval/POST_*.md, move to Approved/
+python scripts/master_orchestrator.py   # dispatches automatically
+```
+
 ---
 
 ## Project Structure
@@ -412,6 +581,7 @@ HackathonAI_Employee_Vault/
 │   ├── mcp_servers/email-mcp/index.js
 │   ├── watchers/{gmail,linkedin,whatsapp,filesystem}_watcher.py
 │   ├── Skills/{auto_linkedin_poster,hitl_approval_handler}.py
+│   ├── tools/ralph_loop_runner.py
 │   ├── schedulers/{daily_scheduler.sh,.ps1}
 │   └── [session/ Inbox/ Needs Action/ Plans/ ...]
 │
@@ -427,7 +597,24 @@ HackathonAI_Employee_Vault/
 │   ├── schedulers/{daily_scheduler.sh,.ps1}
 │   └── [session/ Briefings/ Errors/ Inbox/ Needs Action/ Plans/ ...]
 │
-└── 04_Platinum-Tier-Always-On-Cloud+LocalExecutive-(Production-ish-AI-Employee)/
+├── 04_Auto-Post-AI-(Personal-AI-Employee)/
+│   ├── mcp.json                                       # 3 MCP servers
+│   ├── docs/{architecture.md, lessons_learned.md, social_automation_test.md}
+│   ├── scripts/                                       # ← unique to this tier
+│   │   ├── master_orchestrator.py                     # watchdog dispatcher
+│   │   ├── social_media_executor_v2.py                # Playwright post runner
+│   │   └── trigger_posts.py                           # post draft creator
+│   ├── mcp_servers/{email-mcp,calendar-mcp,slack-mcp}/
+│   ├── watchers/{gmail,linkedin,whatsapp,filesystem,twitter,facebook_instagram}_watcher.py
+│   ├── Skills/{error_recovery,audit_logger,auto_linkedin_poster,hitl_approval_handler,
+│   │          cross_domain_integrator,social_summary_generator,
+│   │          twitter_post_generator,weekly_audit_briefer}.py
+│   ├── tools/ralph_loop_runner.py
+│   ├── ralph-loop.{sh,bat}                            # quick-start scripts
+│   ├── schedulers/{daily_scheduler.sh,.ps1}
+│   └── [session/ Briefings/ Errors/ Inbox/ Needs Action/ Plans/ Pending_Approval/ ...]
+│
+└── 05_Platinum-Tier-Always-On-Cloud+LocalExecutive-(Production-ish-AI-Employee)/
     └── [mirrors Gold Tier + cloud config]
 ```
 
@@ -506,13 +693,16 @@ The HITL gate is enforced at **multiple layers**:
 | `sales_lead` | any | Cross-domain integrator → `Pending Approval/` |
 | `email_draft` | any | `Pending Approval/` (HITL) |
 | `linkedin_post_draft` | any | `Pending Approval/` (HITL) |
+| `social_post_draft` | any | `Pending Approval/` (HITL) |
 | `file_drop` | any | `Done/` (auto-approved) |
+
+**4. Orchestrator layer (Auto-Post-AI)** — `master_orchestrator.py` only dispatches files it finds in `Approved/`. Files in `Pending_Approval/` are never touched by the executor.
 
 ---
 
-## Ralph Loop Runner (Gold)
+## Ralph Loop Runner (Gold+)
 
-`tools/ralph_loop_runner.py` is the autonomous brain of the Gold tier. It runs a **rule-based pipeline** (no LLM required for basic operation) with up to 20 iterations.
+`tools/ralph_loop_runner.py` is the autonomous brain of the Gold/Auto-Post-AI tiers. It runs a **rule-based pipeline** (no LLM required for basic operation) with up to 20 iterations.
 
 ### 6-Step Pipeline
 
@@ -577,7 +767,7 @@ Tools: `draft_slack_message`, `send_slack_message`, `read_slack_channel`, `appro
 
 ---
 
-## Error Recovery (Gold)
+## Error Recovery (Gold+)
 
 All Gold tier watchers and skills import from `Skills/error_recovery.py`:
 
@@ -606,7 +796,7 @@ The system **never crashes** on external failures. If a watcher can't reach Link
 
 ---
 
-## Audit Trail (Gold)
+## Audit Trail (Gold+)
 
 `Skills/audit_logger.py` writes an append-only JSON Lines audit log:
 
@@ -618,7 +808,7 @@ The system **never crashes** on external failures. If a watcher can't reach Link
 
 ### Tracked Action Types
 
-`skill_start` · `skill_complete` · `skill_error` · `item_drafted` · `item_routed` · `item_queued` · `hitl_queued` · `hitl_executed` · `hitl_rejected` · `briefing_written` · `log_purged`
+`skill_start` · `skill_complete` · `skill_error` · `item_drafted` · `item_routed` · `item_queued` · `hitl_queued` · `hitl_executed` · `hitl_rejected` · `briefing_written` · `loop_start` · `loop_iteration` · `tool_executed` · `loop_complete` · `log_purged`
 
 ### Log Lifecycle
 
@@ -655,14 +845,16 @@ This is a hackathon project exploring progressive autonomy in AI agents. Contrib
 - **New watchers** — Telegram, Slack inbound, calendar events
 - **LLM classification** — replace keyword matching with Claude API calls
 - **Dashboard** — real-time pipeline visualization
-- **Tests** — unit tests for error_recovery.py, audit_logger.py
+- **Tests** — unit tests for `error_recovery.py`, `audit_logger.py`, `master_orchestrator.py`
+- **Executor targets** — extend `social_media_executor_v2.py` to support Twitter/Instagram
 
 ### Code style
 
 - Python: standard library preferred, minimal dependencies
 - Error recovery: always use `with_retry()` for external I/O in watchers
-- Audit: call `log_action()` at skill_start, skill_complete, skill_error
+- Audit: call `log_action()` at `skill_start`, `skill_complete`, `skill_error`
 - New skills: import both `error_recovery` and `audit_logger`
+- New executor targets: follow the `platform: linkedin | facebook | both` YAML pattern
 
 ---
 
