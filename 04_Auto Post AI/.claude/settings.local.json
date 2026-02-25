@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(dir /B \"E:\\\\VS-CODES\\\\Prompt-MCP\\\\HackathonAI_Employee_Vault\")",
+      "Bash(ls:*)",
+      "Bash(chmod:*)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && python Skills/cross_domain_integrator.py --dry-run 2>&1)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && python Skills/cross_domain_integrator.py 2>&1)",
+      "Bash(cd:*)",
+      "Bash(cat:*)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && python Skills/social_summary_generator.py 2>&1)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && rm -f \"Plans/facebook_draft_2026-02-22_john_smith.md\" \"Pending Approval/facebook_draft_2026-02-22_john_smith.md\" && python Skills/social_summary_generator.py 2>&1)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && python Skills/twitter_post_generator.py --dry-run 2>&1)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && python Skills/twitter_post_generator.py 2>&1)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && python Skills/weekly_audit_briefer.py --dry-run 2>&1)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && python Skills/weekly_audit_briefer.py 2>&1)",
+      "Bash(cd \"E:/VS-CODES/Prompt-MCP/HackathonAI_Employee_Vault/03_Gold Tier Autonomous Employee\" && python -c \"\nimport sys\nsys.path.insert\\(0, 'Skills'\\)\nfrom error_recovery import with_retry, log_watcher_error, log_skill_error, write_manual_action_plan\nprint\\('error_recovery.py: OK'\\)\n\n# Test with_retry\ncalls = []\ndef flaky\\(n\\):\n    calls.append\\(n\\)\n    if len\\(calls\\) < 3:\n        raise ConnectionError\\('simulated network error'\\)\n    return 'success'\n\nresult = with_retry\\(flaky, 1, max_retries=3, base_delay=0.01, label='test_flaky'\\)\nprint\\(f'with_retry: {result} \\(took {len\\(calls\\)} attempts\\) — OK'\\)\n\n# Test log_watcher_error\nimport os\np = log_watcher_error\\('test_watcher', ValueError\\('boom'\\), context='unit test'\\)\nprint\\(f'log_watcher_error: {p.name} — OK'\\)\n\n# Test log_skill_error  \np = log_skill_error\\('TestSkill', RuntimeError\\('skill crash'\\), context='unit test'\\)\nprint\\(f'log_skill_error: {p.name} — OK'\\)\n\n# Test write_manual_action_plan\np = write_manual_action_plan\\('TestSkill', 'Do X manually', context='ctx', error='err'\\)\nprint\\(f'write_manual_action_plan: {p.name} — OK'\\)\n\" 2>&1)",
+      "Bash(echo ALL FILES: syntax OK:*)"
+    ]
+  }
+}

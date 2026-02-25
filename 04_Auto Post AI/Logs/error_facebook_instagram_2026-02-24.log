@@ -1,0 +1,2337 @@
+
+============================================================
+TIMESTAMP : 2026-02-24 15:36:31
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:36:37
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:36:43
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:36:49
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:37:55
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:38:01
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:38:07
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:38:13
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:39:19
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:39:25
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:39:31
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:39:37
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:40:43
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:40:49
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:40:55
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:41:01
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:42:07
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:42:13
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:42:19
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:42:25
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:43:32
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:43:38
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:43:44
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:43:50
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:44:56
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:45:02
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:45:08
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:45:14
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:46:20
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:46:26
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:46:32
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:46:39
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:47:45
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:47:51
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:47:57
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:48:03
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:49:09
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:49:15
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:49:21
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:49:27
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:50:33
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:50:39
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:50:45
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:50:51
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:51:57
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:52:03
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:52:09
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:52:15
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:53:21
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:53:27
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:53:33
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:53:39
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:54:45
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:54:51
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:54:57
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:55:04
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:55:04
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : session refresh
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 829, in main
+    page.goto(FB_HOME_URL, timeout=PAGE_LOAD_TIMEOUT)
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:56:10
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:56:16
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:56:22
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:56:28
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:57:34
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:57:40
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:57:46
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_dms
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 497, in scrape_ig_dms
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 498, in <lambda>
+    lambda: page.goto(IG_DM_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:57:52
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_ig_activity
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 559, in scrape_ig_activity
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 560, in <lambda>
+    lambda: page.goto(IG_HOME_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:58:58
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_messages
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 344, in scrape_fb_messages
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 345, in <lambda>
+    lambda: page.goto(FB_MESSAGES_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
+
+============================================================
+TIMESTAMP : 2026-02-24 15:59:04
+WATCHER   : facebook_instagram
+ERROR     : TargetClosedError: Page.goto: Target page, context or browser has been closed
+CONTEXT   : scrape_fb_notifications
+TRACEBACK :
+Traceback (most recent call last):
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 410, in scrape_fb_notifications
+    with_retry(
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 89, in with_retry
+    raise last_exc
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\Skills\error_recovery.py", line 69, in with_retry
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\VS-CODES\Prompt-MCP\HackathonAI_Employee_Vault\03_Gold Tier Autonomous Employee\watchers\facebook_instagram_watcher.py", line 411, in <lambda>
+    lambda: page.goto(FB_NOTIFICATIONS_URL, timeout=PAGE_LOAD_TIMEOUT),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadiqkhan\AppData\Local\Programs\Python\Python312\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.goto: Target page, context or browser has been closed
+============================================================
